@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Razones Por Las Que Te Amo 💖</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+</head>
+<body>
+
+  <!-- Floating Romantic Music Player -->
+  <div class="music-pill-widget" id="music-widget">
+    <div class="music-disc-icon" id="music-disc-icon" title="Tocar / Pausar música">🎵</div>
+    <div class="music-info">
+      <span class="music-title">Nuestra Melodía</span>
+      <span class="music-subtitle">Piano & Music Box Romántico ✨</span>
+    </div>
+    <div class="music-controls-btns">
+      <button class="music-btn" id="music-toggle-btn" title="Reproducir / Pausar">▶</button>
+      <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.05" value="0.6" title="Volumen">
+      <button class="custom-audio-upload-btn" id="upload-custom-btn" title="Subir canción favorita">Subir MP3 🎶</button>
+      <input type="file" id="custom-audio-file" accept="audio/*">
+    </div>
+  </div>
+
+  <!-- Mode Toggle (Presentation vs Album) -->
+  <div class="mode-toggle-pill">
+    <button class="mode-btn active" id="mode-presentation">Diapositivas 📖</button>
+    <button class="mode-btn" id="mode-album">Álbum Completo 📜</button>
+  </div>
+
+  <!-- Bottom Navigation Bar -->
+  <nav class="nav-bottom-bar" id="nav-bar">
+    <button class="nav-nav-btn" id="prev-slide-btn">⬅ Anterior</button>
+    <div class="nav-dots-container"></div>
+    <button class="nav-nav-btn" id="next-slide-btn">Siguiente ➔</button>
+  </nav>
+
+  <!-- Welcome / Romantic Letter Modal Overlay -->
+  <div class="welcome-modal-overlay" id="welcome-modal">
+    <div class="welcome-envelope-card">
+      <div class="welcome-icon">💌</div>
+      <h2 class="welcome-title">Tienes Una Carta de Amor</h2>
+      <p class="welcome-desc">
+        He preparado este pequeño rincón con cada una de las razones por las que eres tan especial para mí.
+        <br><br>
+        <em>Toca el botón para abrirla con música romántica de fondo...</em>
+      </p>
+      <button class="welcome-start-btn" id="start-story-btn">Abrir Nuestra Historia 💖</button>
+    </div>
+  </div>
+
+  <!-- Photo Lightbox / Customizer Modal -->
+  <div class="lightbox-overlay" id="photo-lightbox">
+    <div class="lightbox-content">
+      <div class="lightbox-img-wrap" id="lightbox-img"></div>
+      <div class="lightbox-caption" id="lightbox-caption">Nuestros Recuerdos</div>
+      <div class="lightbox-actions">
+        <button class="lightbox-btn btn-upload-photo" id="upload-photo-btn">📷 Cambiar Esta Foto</button>
+        <button class="lightbox-btn btn-close-lightbox" id="close-lightbox-btn">Cerrar</button>
+      </div>
+      <input type="file" id="polaroid-file-input" accept="image/*" style="display:none;">
+    </div>
+  </div>
+
+  <!-- Main Slides App Container -->
+  <main id="app-container">
+
+    <!-- ==========================================
+         SLIDE 1: PORTADA
+         ========================================== -->
+    <section class="slide slide-bg-pink active" id="slide-1">
+      <div class="clouds-layer">
+        <img src="nube rosa.png" class="cloud-item cloud-1" alt="Nube rosa">
+        <img src="nube rosa 2.png" class="cloud-item cloud-2" alt="Nube rosa">
+        <img src="nube rosa.png" class="cloud-item cloud-3" alt="Nube rosa">
+      </div>
+
+      <div class="sparkle-decor" style="top:18%; left:12%; font-size:24px;">✨</div>
+      <div class="sparkle-decor" style="top:22%; right:15%; font-size:28px;">⭐</div>
+      <div class="sparkle-decor" style="bottom:20%; left:25%; font-size:22px;">✨</div>
+
+      <div class="slide-stage">
+        <!-- Stickers overlapping the sheet -->
+        <img src="candado rosa.png" class="sticker s1-padlock anim-swing sticker-interactive" alt="Candado rosa">
+        <img src="dulcesito.png" class="sticker s1-gummy anim-bounce" alt="Gomita rosa">
+        <img src="angel rosa.png" class="sticker s1-angel anim-float" alt="Ángel rosa">
+        <img src="corazon globo.png" class="sticker s1-lollipop anim-pulse sticker-interactive" alt="Paleta corazón">
+        <img src="liston rosa.png" class="sticker s1-ribbon" alt="Listón rosa">
+        <img src="clip.png" class="sticker s1-clip" alt="Clip">
+
+        <div class="notebook-sheet-card">
+          <img src="hoja cuaderno.png" class="notebook-paper-bg" alt="Hoja de cuaderno">
+          <div class="notebook-content">
+            <!-- Cutout Ransom Letters Title -->
+            <div class="cutout-title-row">
+              <div class="cutout-word">
+                <span class="cutout-tile tile-pink-hot">R</span>
+                <span class="cutout-tile tile-purple-light">A</span>
+                <span class="cutout-tile tile-pink-deep">Z</span>
+                <span class="cutout-tile tile-yellow-fun">O</span>
+                <span class="cutout-tile tile-magenta">N</span>
+                <span class="cutout-tile tile-white-outline">E</span>
+                <span class="cutout-tile tile-blue-bright">S</span>
+              </div>
+            </div>
+
+            <div class="cutout-title-row">
+              <div class="cutout-word">
+                <span class="cutout-tile tile-pink-soft tile-sub-title">p</span>
+                <span class="cutout-tile tile-purple-deep tile-sub-title">O</span>
+                <span class="cutout-tile tile-blue-sky tile-sub-title">R</span>
+              </div>
+              <div class="cutout-word">
+                <span class="cutout-tile tile-magenta tile-sub-title">L</span>
+                <span class="cutout-tile tile-yellow-fun tile-sub-title">A</span>
+                <span class="cutout-tile tile-pink-hot tile-sub-title">s</span>
+              </div>
+            </div>
+
+            <div class="cutout-title-row">
+              <div class="cutout-word">
+                <span class="cutout-tile tile-purple-light tile-sub-title">q</span>
+                <span class="cutout-tile tile-pink-soft tile-sub-title">u</span>
+                <span class="cutout-tile tile-blue-bright tile-sub-title">e</span>
+              </div>
+              <div class="cutout-word">
+                <span class="cutout-tile tile-pink-deep tile-sub-title">T</span>
+                <span class="cutout-tile tile-white-outline tile-sub-title">e</span>
+              </div>
+              <div class="cutout-word">
+                <span class="cutout-tile tile-magenta tile-sub-title">a</span>
+                <span class="cutout-tile tile-purple-deep tile-sub-title">M</span>
+                <span class="cutout-tile tile-blue-sky tile-sub-title">O</span>
+              </div>
+            </div>
+
+            <button class="cta-start-btn" id="slide1-start-btn">
+              Descubrir Nuestras Razones 💖
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 2: EL DÍA QUE NOS CONOCIMOS
+         ========================================== -->
+    <section class="slide slide-bg-pink" id="slide-2">
+      <div class="clouds-layer">
+        <img src="nube rosa 2.png" class="cloud-item cloud-1" alt="Nube rosa">
+        <img src="nube rosa.png" class="cloud-item cloud-2" alt="Nube rosa">
+      </div>
+
+      <img src="dulce rosa.png" class="sticker anim-bounce" style="top:5%; left:6%; width:110px;" alt="Dulce rosa">
+      <img src="corazon rosa.png" class="sticker anim-float" style="top:14%; left:36%; width:60px;" alt="Corazón rosa">
+      <img src="corazon rosa.png" class="sticker anim-pulse" style="bottom:12%; left:40%; width:50px;" alt="Corazón rosa">
+
+      <div class="slide-stage s2-stage">
+        <!-- Left: Notebook Sheet with Text and Polaroid -->
+        <div class="notebook-sheet-card s2-sheet-card">
+          <img src="hoja cuaderno.png" class="notebook-paper-bg" alt="Hoja de cuaderno">
+          <div class="notebook-content s2-content">
+            <div class="cutout-title-row" style="margin-bottom:12px; justify-content:flex-start;">
+              <div class="cutout-word">
+                <span class="cutout-tile tile-magenta tile-sub-title">E</span>
+                <span class="cutout-tile tile-pink-soft tile-sub-title">L</span>
+              </div>
+              <div class="cutout-word">
+                <span class="cutout-tile tile-pink-deep tile-sub-title">D</span>
+                <span class="cutout-tile tile-yellow-fun tile-sub-title">í</span>
+                <span class="cutout-tile tile-magenta tile-sub-title">A</span>
+              </div>
+              <div class="cutout-word">
+                <span class="cutout-tile tile-blue-bright tile-sub-title">Q</span>
+                <span class="cutout-tile tile-purple-light tile-sub-title">U</span>
+                <span class="cutout-tile tile-pink-hot tile-sub-title">E</span>
+              </div>
+              <div class="cutout-word">
+                <span class="cutout-tile tile-magenta tile-sub-title">N</span>
+                <span class="cutout-tile tile-pink-soft tile-sub-title">O</span>
+                <span class="cutout-tile tile-purple-deep tile-sub-title">s</span>
+              </div>
+              <div class="cutout-word">
+                <span class="cutout-tile tile-blue-sky tile-sub-title">C</span>
+                <span class="cutout-tile tile-yellow-fun tile-sub-title">O</span>
+                <span class="cutout-tile tile-pink-deep tile-sub-title">N</span>
+                <span class="cutout-tile tile-purple-light tile-sub-title">O</span>
+                <span class="cutout-tile tile-white-outline tile-sub-title">C</span>
+                <span class="cutout-tile tile-magenta tile-sub-title">I</span>
+                <span class="cutout-tile tile-pink-hot tile-sub-title">M</span>
+                <span class="cutout-tile tile-blue-bright tile-sub-title">O</span>
+                <span class="cutout-tile tile-pink-soft tile-sub-title">S</span>
+              </div>
+            </div>
+
+            <p class="notebook-body-text" style="text-align:left; font-size:17px; margin-bottom:20px; line-height:1.7;">
+              Recuerdo el momento en que nuestras miradas se cruzaron, como si el universo hubiera conspirado para reunirnos en ese instante preciso.
+            </p>
+
+            <!-- Polaroid with Pin on bottom-right of sheet -->
+            <div class="polaroid-card s2-polaroid" data-polaroid-id="slide2">
+              <img src="perlas rosas.png" class="s2-pin" alt="Alfiler perla">
+              <div class="polaroid-photo-frame">
+                <svg viewBox="0 0 200 180" width="100%" height="100%">
+                  <defs>
+                    <linearGradient id="warmSunset" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ffb347"/>
+                      <stop offset="50%" stop-color="#ffcc33"/>
+                      <stop offset="100%" stop-color="#ff7e5f"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="200" height="180" fill="url(#warmSunset)"/>
+                  <circle cx="80" cy="85" r="38" fill="#ffe0b2"/>
+                  <circle cx="125" cy="90" r="34" fill="#ffd180"/>
+                  <path d="M 60 70 Q 75 50 95 65 Q 90 90 70 85 Z" fill="#5d4037"/>
+                  <path d="M 115 65 Q 135 48 150 75 Q 135 100 115 85 Z" fill="#8d6e63"/>
+                  <circle cx="95" cy="85" r="3" fill="#3e2723"/>
+                  <circle cx="112" cy="88" r="3" fill="#3e2723"/>
+                  <path d="M 92 98 Q 98 102 96 98" stroke="#d81b60" stroke-width="2" fill="none"/>
+                  <path d="M 108 100 Q 114 104 112 100" stroke="#d81b60" stroke-width="2" fill="none"/>
+                  <path d="M 100 70 Q 104 64 108 70" stroke="#ff4081" stroke-width="2" fill="none"/>
+                  <text x="100" y="55" font-family="'Caveat', cursive" font-size="14" fill="#d81b60" text-anchor="middle">✨ Primer Mirada ✨</text>
+                </svg>
+              </div>
+              <div class="polaroid-date">01·09·2030</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Laptop with Pop-up Chat Bubbles -->
+        <div class="s2-right-laptop">
+          <div class="s2-laptop-wrap" title="¡Haz clic en la laptop para revivir la confesión!">
+            <div class="chat-bubbles-container">
+              <div class="chat-bubble bubble-sender bubble-1">MARIANA, QUIERO CONFESARTE ALGO...</div>
+              <div class="chat-bubble bubble-receiver bubble-2">¡YO TAMBIÉN TENGO ALGO QUE DECIRTE!</div>
+              <div class="chat-bubble bubble-sender bubble-3">¡ME GUSTAS MUCHO! 💕</div>
+              <div class="chat-bubble bubble-receiver bubble-4">¿QUÉ CREES? ¡TAMBIÉN ME GUSTAS! 💖</div>
+            </div>
+            <img src="laptop rosa.png" class="s2-laptop" alt="Laptop rosa">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 3: RAZÓN #1 (Azul / Delfín)
+         ========================================== -->
+    <section class="slide slide-bg-blue" id="slide-3">
+      <div class="clouds-layer">
+        <img src="nub celeste.png" class="cloud-item cloud-1" alt="Nube celeste">
+        <img src="nub celeste.png" class="cloud-item cloud-2" alt="Nube celeste">
+      </div>
+
+      <div class="sparkle-decor" style="top:15%; left:12%; font-size:26px; color:#0288d1;">✨</div>
+      <div class="sparkle-decor" style="bottom:18%; right:14%; font-size:24px; color:#0288d1;">✨</div>
+
+      <div class="slide-stage">
+        <img src="ballena celeste.png" class="sticker s3-whale anim-float" alt="Delfín / Ballena celeste">
+        <img src="diamante.png" class="sticker s3-diamond anim-pulse" alt="Diamante">
+        <img src="rayon celeste.png" class="sticker s3-scribble" alt="Rayón celeste">
+        <img src="angel celeste.png" class="sticker s3-angel anim-float" alt="Ángel celeste">
+        <img src="clip.png" class="sticker s3-clip" alt="Clip">
+
+        <div class="notebook-sheet-card">
+          <img src="hoja cuaderno.png" class="notebook-paper-bg" alt="Hoja de cuaderno">
+          <div class="notebook-content">
+            <div class="cutout-title-row">
+              <div class="cutout-word">
+                <span class="cutout-tile tile-blue-bright">R</span>
+                <span class="cutout-tile tile-blue-sky">A</span>
+                <span class="cutout-tile tile-blue-deep">Z</span>
+                <span class="cutout-tile tile-white-outline" style="border-color:#0288d1; color:#0288d1;">Ó</span>
+                <span class="cutout-tile tile-blue-bright">N</span>
+              </div>
+              <div class="cutout-word">
+                <span class="cutout-tile tile-blue-sky">#</span>
+                <span class="cutout-tile tile-blue-deep">1</span>
+              </div>
+            </div>
+
+            <p class="notebook-body-text">
+              Te amo por la manera en que
+              <span class="doodle-circle-wrap circle-blue">
+                <span class="doodle-text">iluminas mi vida con tu</span>
+                <svg class="doodle-circle-svg" viewBox="0 0 260 46" preserveAspectRatio="none">
+                  <path class="doodle-circle-path" d="M 10,23 C 10,9 35,5 130,5 C 225,5 250,11 250,23 C 250,35 225,41 130,41 C 35,41 10,35 10,23 Z"/>
+                </svg>
+              </span>
+              sonrisa, convirtiendo cada día en un regalo especial.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 4: RAZÓN #2 (Rosa / CD)
+         ========================================== -->
+    <section class="slide slide-bg-pink" id="slide-4">
+      <div class="clouds-layer">
+        <img src="nube rosa.png" class="cloud-item cloud-1" alt="Nube rosa">
+        <img src="nube rosa 2.png" class="cloud-item cloud-2" alt="Nube rosa">
+      </div>
+
+      <div class="slide-stage">
+        <!-- Interactive CD Case with rotating vinyl -->
+        <div class="s4-cd-box" title="¡Haz clic en el CD para escuchar o pausar la melodía!">
+          <img src="cd.png" class="s4-cd-img" alt="CD Estuche">
+          <img src="moño rosa.png" class="s4-bow anim-pulse" alt="Moño rosa">
+        </div>
+
+        <img src="yurex rosa.png" class="sticker s4-washi" alt="Cinta rosa">
+        <img src="flores rosas.png" class="sticker s4-flowers anim-float" alt="Flores rosas">
+        <img src="estrellas dibujo.png" class="sticker s4-stars" alt="Estrellas dibujo">
+        <img src="clip.png" class="sticker" style="top:-15px; left:48%; width:45px;" alt="Clip">
+
+        <div class="notebook-sheet-card" style="margin-left: 80px;">
+          <img src="hoja cuaderno.png" class="notebook-paper-bg" alt="Hoja de cuaderno">
+          <div class="notebook-content">
+            <div class="cutout-title-row">
+              <div class="cutout-word">
+                <span class="cutout-tile tile-pink-hot">R</span>
+                <span class="cutout-tile tile-pink-soft">A</span>
+                <span class="cutout-tile tile-pink-deep">Z</span>
+                <span class="cutout-tile tile-magenta">Ó</span>
+                <span class="cutout-tile tile-pink-hot">N</span>
+              </div>
+              <div class="cutout-word">
+                <span class="cutout-tile tile-yellow-fun">#</span>
+                <span class="cutout-tile tile-magenta">2</span>
+              </div>
+            </div>
+
+            <p class="notebook-body-text">
+              Me encanta la forma en que
+              <span class="doodle-circle-wrap circle-pink">
+                <span class="doodle-text">escuchas con atención y</span>
+                <svg class="doodle-circle-svg" viewBox="0 0 270 46" preserveAspectRatio="none">
+                  <path class="doodle-circle-path" d="M 10,23 C 10,9 35,5 135,5 C 235,5 260,11 260,23 C 260,35 235,41 135,41 C 35,41 10,35 10,23 Z"/>
+                </svg>
+              </span>
+              comprendes cada palabra que digo, creando un vínculo profundo entre nosotros.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 5: RAZÓN #3 (Azul / Audífonos)
+         ========================================== -->
+    <section class="slide slide-bg-blue" id="slide-5">
+      <div class="clouds-layer">
+        <img src="nub celeste.png" class="cloud-item cloud-1" alt="Nube celeste">
+        <img src="nub celeste.png" class="cloud-item cloud-2" alt="Nube celeste">
+      </div>
+
+      <img src="corazon medio tranparente azul.png" class="sticker anim-float" style="top:15%; left:12%; width:80px;" alt="Corazón azul">
+      <img src="corazon medio tranparente azul.png" class="sticker anim-pulse" style="bottom:20%; right:14%; width:70px;" alt="Corazón azul">
+
+      <div class="slide-stage">
+        <!-- Giant Chrome Blue Heart in Background -->
+        <img src="corazon celeste.png" class="s5-heart-chrome anim-pulse" alt="Corazón cromado azul">
+
+        <img src="audifonos celestes.png" class="sticker s5-headphones anim-float sticker-interactive" alt="Audífonos celestes">
+        <img src="osito azul.png" class="sticker s5-gummy-blue anim-bounce sticker-interactive" alt="Osito azul">
+        <img src="cinta azul diagonal.png" class="sticker s5-tape-diagonal" alt="Cinta azul">
+        <img src="clip.png" class="sticker s5-clip" alt="Clip">
+
+        <div class="notebook-sheet-card">
+          <img src="hoja cuaderno.png" class="notebook-paper-bg" alt="Hoja de cuaderno">
+          <div class="notebook-content">
+            <div class="cutout-title-row">
+              <div class="cutout-word">
+                <span class="cutout-tile tile-blue-bright">R</span>
+                <span class="cutout-tile tile-blue-sky">A</span>
+                <span class="cutout-tile tile-blue-deep">Z</span>
+                <span class="cutout-tile tile-white-outline" style="border-color:#0288d1; color:#0288d1;">Ó</span>
+                <span class="cutout-tile tile-blue-bright">N</span>
+              </div>
+              <div class="cutout-word">
+                <span class="cutout-tile tile-blue-sky">#</span>
+                <span class="cutout-tile tile-blue-deep">3</span>
+              </div>
+            </div>
+
+            <p class="notebook-body-text">
+              La manera en que
+              <span class="doodle-circle-wrap circle-blue">
+                <span class="doodle-text">compartimos</span>
+                <svg class="doodle-circle-svg" viewBox="0 0 160 46" preserveAspectRatio="none">
+                  <path class="doodle-circle-path" d="M 10,23 C 10,9 25,5 80,5 C 135,5 150,11 150,23 C 150,35 135,41 80,41 C 25,41 10,35 10,23 Z"/>
+                </svg>
+              </span>
+              risas y superamos desafíos juntos es una razón más por la que te amo cada día más.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 6: RAZÓN #4 (Morado / Bola 8)
+         ========================================== -->
+    <section class="slide slide-bg-purple" id="slide-6">
+      <div class="clouds-layer">
+        <img src="nube rosa 2.png" class="cloud-item cloud-1" style="filter: hue-rotate(40deg);" alt="Nube morada">
+        <img src="nube rosa.png" class="cloud-item cloud-2" style="filter: hue-rotate(40deg);" alt="Nube morada">
+      </div>
+
+      <div class="sparkle-decor" style="top:18%; left:10%; font-size:26px; color:#8e24aa;">✨</div>
+      <div class="sparkle-decor" style="bottom:22%; left:20%; font-size:22px; color:#8e24aa;">⭐</div>
+
+      <div class="slide-stage">
+        <img src="curita celeste.png" class="sticker s6-bandaid anim-float" alt="Curita">
+        <img src="estrellas dibujo.png" class="sticker s6-stars" alt="Estrellas dibujo">
+        <img src="osito azul.png" class="sticker s6-gummy anim-bounce" style="filter: hue-rotate(40deg);" alt="Osito gomita">
+        <img src="rayon cafe.png" class="sticker s6-scribble" alt="Rayón café">
+        <img src="diamante corazon azul.png" class="sticker s6-heart-gem anim-pulse" style="filter: hue-rotate(40deg);" alt="Diamante corazón morado">
+        <img src="clip.png" class="sticker" style="top:-15px; right:200px; width:45px;" alt="Clip">
+
+        <!-- Magic 8-Ball Interactive with Fortune Popup -->
+        <img src="bola8.png" class="sticker s6-ball8 sticker-interactive" alt="Bola 8 mágica" title="¡Toca la bola 8 para ver una predicción de nuestro amor!">
+        <div class="fortune-popup">Destino: ¡Juntos por siempre! ❤️</div>
+
+        <div class="notebook-sheet-card">
+          <img src="hoja cuaderno.png" class="notebook-paper-bg" alt="Hoja de cuaderno">
+          <div class="notebook-content">
+            <div class="cutout-title-row">
+              <div class="cutout-word">
+                <span class="cutout-tile tile-purple-light">R</span>
+                <span class="cutout-tile tile-purple-deep">A</span>
+                <span class="cutout-tile tile-yellow-fun">Z</span>
+                <span class="cutout-tile tile-purple-light">Ó</span>
+                <span class="cutout-tile tile-purple-deep">N</span>
+              </div>
+              <div class="cutout-word">
+                <span class="cutout-tile tile-purple-light">#</span>
+                <span class="cutout-tile tile-purple-deep">4</span>
+              </div>
+            </div>
+
+            <p class="notebook-body-text">
+              Tus pequeños gestos de bondad y ternura hacen que cada día sea
+              <span class="doodle-circle-wrap circle-purple">
+                <span class="doodle-text">especial a tu lado</span>
+                <svg class="doodle-circle-svg" viewBox="0 0 210 46" preserveAspectRatio="none">
+                  <path class="doodle-circle-path" d="M 10,23 C 10,9 30,5 105,5 C 180,5 200,11 200,23 C 200,35 180,41 105,41 C 30,41 10,35 10,23 Z"/>
+                </svg>
+              </span>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 7: RAZÓN #5 (Rosa / Bolígrafo & Mano)
+         ========================================== -->
+    <section class="slide slide-bg-pink" id="slide-7">
+      <div class="clouds-layer">
+        <img src="nube rosa.png" class="cloud-item cloud-1" alt="Nube rosa">
+        <img src="nube rosa 2.png" class="cloud-item cloud-2" alt="Nube rosa">
+      </div>
+
+      <img src="burbuja.png" class="sticker anim-float s7-bubbles" style="top:10%; right:15%; width:75px;" alt="Burbuja">
+      <img src="burbuja.png" class="sticker anim-pulse s7-bubbles" style="bottom:15%; right:8%; width:90px;" alt="Burbuja">
+
+      <div class="slide-stage">
+        <!-- Interactive Korean Finger Heart Hand -->
+        <img src="corazon de mano.png" class="sticker s7-hand-heart sticker-interactive anim-float" alt="Corazón de mano" title="¡Haz clic en la mano para lanzar una lluvia de corazones!">
+        <img src="boligrafo.png" class="sticker s7-pen anim-swing" alt="Bolígrafo rosa">
+        <img src="dulce rosa.png" class="sticker s7-candy anim-bounce" alt="Dulce rosa">
+        <img src="corazon rosa.png" class="sticker s7-heart-top anim-pulse" alt="Corazón rosa">
+        <img src="rayon cafe.png" class="sticker" style="bottom:-20px; right:180px; width:130px;" alt="Rayón rosa">
+        <img src="clip.png" class="sticker" style="bottom:-15px; left:50%; transform:translateX(-50%); width:45px;" alt="Clip">
+
+        <div class="notebook-sheet-card">
+          <img src="hoja cuaderno.png" class="notebook-paper-bg" alt="Hoja de cuaderno">
+          <div class="notebook-content">
+            <div class="cutout-title-row">
+              <div class="cutout-word">
+                <span class="cutout-tile tile-pink-soft">R</span>
+                <span class="cutout-tile tile-pink-deep">A</span>
+                <span class="cutout-tile tile-white-outline">Z</span>
+                <span class="cutout-tile tile-magenta">Ó</span>
+                <span class="cutout-tile tile-pink-hot">N</span>
+              </div>
+              <div class="cutout-word">
+                <span class="cutout-tile tile-magenta">#</span>
+                <span class="cutout-tile tile-pink-deep">5</span>
+              </div>
+            </div>
+
+            <p class="notebook-body-text">
+              La forma en que cuidas de mí y te preocupas por mi
+              <span class="doodle-circle-wrap circle-pink">
+                <span class="doodle-text">felicidad</span>
+                <svg class="doodle-circle-svg" viewBox="0 0 140 46" preserveAspectRatio="none">
+                  <path class="doodle-circle-path" d="M 10,23 C 10,9 20,5 70,5 C 120,5 130,11 130,23 C 130,35 120,41 70,41 C 20,41 10,35 10,23 Z"/>
+                </svg>
+              </span>
+              demuestra tu amor incondicional, y eso es algo que siempre valoraré.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 8: NUESTROS MEJORES MOMENTOS JUNTOS
+         ========================================== -->
+    <section class="slide slide-bg-blue" id="slide-8">
+      <div class="clouds-layer">
+        <img src="nub celeste.png" class="cloud-item cloud-1" alt="Nube celeste">
+        <img src="nub celeste.png" class="cloud-item cloud-2" alt="Nube celeste">
+      </div>
+
+      <img src="corazon medio tranparente azul.png" class="sticker anim-float" style="top:12%; left:28%; width:75px;" alt="Corazón transparente azul">
+      <img src="corazon medio tranparente azul.png" class="sticker anim-pulse" style="bottom:18%; right:22%; width:65px;" alt="Corazón transparente azul">
+
+      <div class="slide-stage">
+        <img src="corona rayon.png" class="sticker s8-crown anim-pulse" alt="Corona dibujada">
+        <img src="rayon celeste.png" class="sticker" style="bottom:15px; left:50%; transform:translateX(-50%); width:130px; z-index:15;" alt="Rayón celeste">
+        <img src="clip.png" class="sticker" style="top:-15px; left:50%; transform:translateX(-50%); width:45px; z-index:16;" alt="Clip">
+
+        <!-- Filmstrip Left: Couple Hugging -->
+        <div class="filmstrip-card s8-film-left" data-polaroid-id="slide8-hug" title="Ver foto">
+          <img src="clip.png" style="position:absolute; top:-12px; left:10px; width:35px; z-index:5;" alt="Clip">
+          <div class="film-holes"><div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div></div>
+          <div class="film-img-frame">
+            <svg viewBox="0 0 160 200" width="100%" height="100%">
+              <defs>
+                <linearGradient id="warmHug" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f6d365"/>
+                  <stop offset="100%" stop-color="#fda085"/>
+                </linearGradient>
+              </defs>
+              <rect width="160" height="200" fill="url(#warmHug)"/>
+              <!-- Couple Tender Hug -->
+              <circle cx="70" cy="80" r="30" fill="#ffd180"/>
+              <circle cx="95" cy="85" r="28" fill="#ffe0b2"/>
+              <path d="M 50 65 Q 65 40 85 60 Q 75 90 55 85 Z" fill="#4e342e"/>
+              <path d="M 85 65 Q 105 45 115 70 Q 105 95 85 90 Z" fill="#6d4c41"/>
+              <path d="M 50 110 Q 75 95 105 115 L 115 190 L 45 190 Z" fill="#ffffff" opacity="0.9"/>
+              <path d="M 80 110 Q 110 115 130 140 L 120 190 L 75 190 Z" fill="#37474f"/>
+              <!-- Arm wrap -->
+              <path d="M 55 125 Q 90 140 115 120" stroke="#ffd180" stroke-width="12" stroke-linecap="round" fill="none"/>
+              <text x="80" y="180" font-family="'Courier Prime', monospace" font-size="11" fill="#fff" text-anchor="middle">Abrazo Infinito</text>
+            </svg>
+          </div>
+          <div class="film-holes"><div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div></div>
+        </div>
+
+        <!-- Polaroid Sunflowers Bottom-Left -->
+        <div class="polaroid-card s8-polaroid-sunflower" data-polaroid-id="slide8-sunflower" title="Ver foto">
+          <div class="polaroid-photo-frame">
+            <svg viewBox="0 0 160 140" width="100%" height="100%">
+              <defs>
+                <radialGradient id="sunflowerGrad">
+                  <stop offset="0%" stop-color="#ffe600"/>
+                  <stop offset="70%" stop-color="#ff9100"/>
+                  <stop offset="100%" stop-color="#e65100"/>
+                </radialGradient>
+              </defs>
+              <rect width="160" height="140" fill="#81c784"/>
+              <!-- Sunflowers in warm field -->
+              <circle cx="80" cy="70" r="42" fill="url(#sunflowerGrad)"/>
+              <circle cx="80" cy="70" r="22" fill="#3e2723"/>
+              <circle cx="25" cy="110" r="30" fill="url(#sunflowerGrad)"/>
+              <circle cx="25" cy="110" r="15" fill="#3e2723"/>
+              <circle cx="135" cy="110" r="32" fill="url(#sunflowerGrad)"/>
+              <circle cx="135" cy="110" r="16" fill="#3e2723"/>
+              <text x="80" y="75" font-family="sans-serif" font-size="12" fill="#ffd54f" text-anchor="middle">🌻</text>
+            </svg>
+          </div>
+          <div class="polaroid-date">22·12·2030</div>
+        </div>
+
+        <!-- Polaroid Sunset Silhouette Top-Right -->
+        <div class="polaroid-card s8-polaroid-sunset" data-polaroid-id="slide8-sunset" title="Ver foto">
+          <img src="perlas rosas.png" style="position:absolute; top:-10px; left:50%; transform:translateX(-50%); width:26px; z-index:10;" alt="Alfiler">
+          <div class="polaroid-photo-frame">
+            <svg viewBox="0 0 160 140" width="100%" height="100%">
+              <defs>
+                <linearGradient id="twilightSunset" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ff758c"/>
+                  <stop offset="50%" stop-color="#ff7eb3"/>
+                  <stop offset="100%" stop-color="#ffb199"/>
+                </linearGradient>
+              </defs>
+              <rect width="160" height="140" fill="url(#twilightSunset)"/>
+              <circle cx="80" cy="90" r="35" fill="#fff" opacity="0.8"/>
+              <!-- Couple romantic silhouettes -->
+              <circle cx="68" cy="80" r="14" fill="#212121"/>
+              <circle cx="92" cy="82" r="12" fill="#212121"/>
+              <path d="M 52 140 L 68 95 L 80 140 Z" fill="#212121"/>
+              <path d="M 80 140 L 92 97 L 108 140 Z" fill="#212121"/>
+              <path d="M 72 110 Q 80 120 88 110" stroke="#212121" stroke-width="4" fill="none"/>
+            </svg>
+          </div>
+          <div class="polaroid-date">12·10·2030</div>
+        </div>
+
+        <!-- Filmstrip Right: Sunflower Couple -->
+        <div class="filmstrip-card s8-film-right" data-polaroid-id="slide8-field" title="Ver foto">
+          <div class="film-holes"><div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div></div>
+          <div class="film-img-frame">
+            <svg viewBox="0 0 160 200" width="100%" height="100%">
+              <defs>
+                <linearGradient id="goldenField" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffe259"/>
+                  <stop offset="100%" stop-color="#ffa751"/>
+                </linearGradient>
+              </defs>
+              <rect width="160" height="200" fill="url(#goldenField)"/>
+              <!-- Couple laughing in sunflower field -->
+              <circle cx="65" cy="85" r="28" fill="#ffd180"/>
+              <circle cx="100" cy="90" r="26" fill="#ffe0b2"/>
+              <path d="M 45 70 Q 60 45 80 65 Q 70 95 50 90 Z" fill="#fbc02d"/>
+              <path d="M 90 70 Q 110 50 120 75 Q 110 100 90 95 Z" fill="#5d4037"/>
+              <text x="65" y="160" font-size="28">🌻</text>
+              <text x="105" y="170" font-size="26">🌻</text>
+              <text x="80" y="190" font-family="'Courier Prime', monospace" font-size="11" fill="#fff" text-anchor="middle">Bajo El Sol</text>
+            </svg>
+          </div>
+          <div class="film-holes"><div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div></div>
+        </div>
+
+        <div class="notebook-sheet-card">
+          <img src="hoja cuaderno.png" class="notebook-paper-bg" alt="Hoja de cuaderno">
+          <div class="notebook-content">
+            <div class="tile-tag-label">NUESTROS MEJORES</div>
+
+            <div class="cutout-title-row" style="margin-bottom:14px;">
+              <div class="cutout-word">
+                <span class="cutout-tile tile-blue-bright">M</span>
+                <span class="cutout-tile tile-blue-sky">O</span>
+                <span class="cutout-tile tile-blue-deep">M</span>
+                <span class="cutout-tile tile-white-outline" style="border-color:#0288d1; color:#0288d1;">E</span>
+                <span class="cutout-tile tile-blue-bright">N</span>
+                <span class="cutout-tile tile-blue-sky">T</span>
+                <span class="cutout-tile tile-blue-deep">O</span>
+                <span class="cutout-tile tile-white-outline" style="border-color:#0288d1; color:#0288d1;">S</span>
+              </div>
+            </div>
+
+            <div class="cutout-title-row">
+              <div class="cutout-word">
+                <span class="cutout-tile tile-blue-deep tile-sub-title">J</span>
+                <span class="cutout-tile tile-blue-sky tile-sub-title">U</span>
+                <span class="cutout-tile tile-blue-bright tile-sub-title">N</span>
+                <span class="cutout-tile tile-white-outline tile-sub-title" style="border-color:#0288d1; color:#0288d1;">T</span>
+                <span class="cutout-tile tile-blue-deep tile-sub-title">O</span>
+                <span class="cutout-tile tile-blue-sky tile-sub-title">S</span>
+              </div>
+            </div>
+
+            <p style="font-family:'Courier Prime', monospace; font-size:14px; color:#555; margin-top:20px;">
+              <em>(Haz clic en cualquier fotografía para ampliarla o personalizarla con tus propias fotos 📷)</em>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 9: LA RAZÓN MÁS IMPORTANTE (Disco Ball)
+         ========================================== -->
+    <section class="slide slide-bg-purple" id="slide-9">
+      <div class="clouds-layer">
+        <img src="nube rosa.png" class="cloud-item cloud-1" style="filter: hue-rotate(40deg);" alt="Nube morada">
+        <img src="nube rosa 2.png" class="cloud-item cloud-2" style="filter: hue-rotate(40deg);" alt="Nube morada">
+      </div>
+
+      <div class="slide-stage">
+        <!-- Glittering Disco Ball -->
+        <img src="esfera disco.png" class="sticker s9-disco anim-swing sticker-interactive" alt="Esfera disco" title="¡Brillo y música!">
+        <img src="liston rosa 2.png" class="sticker s9-ribbon-curled" alt="Listón ondulado">
+        <img src="diamante corazon azul.png" class="sticker s9-gem anim-pulse" style="filter: hue-rotate(40deg);" alt="Gema morada">
+        <img src="clip.png" class="sticker" style="top:50%; right:-15px; width:45px;" alt="Clip">
+
+        <!-- Polaroid Hands Sunset -->
+        <div class="polaroid-card s9-polaroid-love" data-polaroid-id="slide9-hands" title="Ver foto">
+          <div class="polaroid-photo-frame">
+            <svg viewBox="0 0 160 140" width="100%" height="100%">
+              <defs>
+                <linearGradient id="beachSunset" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#4a148c"/>
+                  <stop offset="40%" stop-color="#880e4f"/>
+                  <stop offset="80%" stop-color="#ff6f00"/>
+                  <stop offset="100%" stop-color="#ffd54f"/>
+                </linearGradient>
+              </defs>
+              <rect width="160" height="140" fill="url(#beachSunset)"/>
+              <!-- Intertwined hands silhouette -->
+              <path d="M 0 110 Q 50 100 80 85 Q 90 80 85 95 Q 60 115 0 135 Z" fill="#1a0033"/>
+              <path d="M 160 110 Q 110 100 80 85 Q 70 80 75 95 Q 100 115 160 135 Z" fill="#1a0033"/>
+              <circle cx="80" cy="85" r="4" fill="#ffd54f"/>
+              <text x="80" y="45" font-family="'Caveat', cursive" font-size="16" fill="#ffffff" text-anchor="middle">Juntos Siempre</text>
+            </svg>
+          </div>
+          <div class="polaroid-date" style="color:#d81b60; font-weight:900;">¡TE AMO!</div>
+        </div>
+
+        <div class="notebook-sheet-card">
+          <img src="hoja cuaderno.png" class="notebook-paper-bg" alt="Hoja de cuaderno">
+          <div class="notebook-content">
+            <div class="cutout-title-row" style="margin-bottom:8px;">
+              <div class="cutout-word">
+                <span class="cutout-tile tile-purple-light tile-sub-title">L</span>
+                <span class="cutout-tile tile-purple-deep tile-sub-title">A</span>
+              </div>
+              <div class="cutout-word">
+                <span class="cutout-tile tile-purple-light tile-sub-title">R</span>
+                <span class="cutout-tile tile-yellow-fun tile-sub-title">A</span>
+                <span class="cutout-tile tile-purple-deep tile-sub-title">Z</span>
+                <span class="cutout-tile tile-white-outline tile-sub-title">Ó</span>
+                <span class="cutout-tile tile-purple-light tile-sub-title">N</span>
+              </div>
+              <div class="cutout-word">
+                <span class="cutout-tile tile-purple-deep tile-sub-title">M</span>
+                <span class="cutout-tile tile-yellow-fun tile-sub-title">á</span>
+                <span class="cutout-tile tile-purple-light tile-sub-title">S</span>
+              </div>
+            </div>
+
+            <div class="cutout-title-row" style="margin-bottom:18px;">
+              <div class="cutout-word">
+                <span class="cutout-tile tile-purple-deep">i</span>
+                <span class="cutout-tile tile-purple-light">M</span>
+                <span class="cutout-tile tile-yellow-fun">P</span>
+                <span class="cutout-tile tile-purple-deep">o</span>
+                <span class="cutout-tile tile-white-outline">R</span>
+                <span class="cutout-tile tile-purple-light">T</span>
+                <span class="cutout-tile tile-purple-deep">a</span>
+                <span class="cutout-tile tile-yellow-fun">N</span>
+                <span class="cutout-tile tile-purple-light">T</span>
+                <span class="cutout-tile tile-purple-deep">E</span>
+              </div>
+            </div>
+
+            <p class="notebook-body-text">
+              Pero sobre todo, amo la forma en que compartimos sueños, metas y construimos
+              <span class="doodle-circle-wrap circle-purple">
+                <span class="doodle-text">un futuro</span>
+                <svg class="doodle-circle-svg" viewBox="0 0 140 46" preserveAspectRatio="none">
+                  <path class="doodle-circle-path" d="M 10,23 C 10,9 20,5 70,5 C 120,5 130,11 130,23 C 130,35 120,41 70,41 C 20,41 10,35 10,23 Z"/>
+                </svg>
+              </span>
+              juntos, creando una conexión que va más allá de las palabras.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 10: GRAN CIERRE ("¡TE AMO!")
+         ========================================== -->
+    <section class="slide slide-bg-pink" id="slide-10">
+      <div class="clouds-layer">
+        <img src="nube rosa.png" class="cloud-item cloud-1" alt="Nube rosa">
+        <img src="nube rosa 2.png" class="cloud-item cloud-2" alt="Nube rosa">
+      </div>
+
+      <div class="slide-stage">
+        <!-- Pink Cupid Angel Hugging Giant Shiny Heart -->
+        <img src="angel rosa.png" class="sticker s10-angel anim-float" alt="Ángel rosa con corazón">
+        <img src="moño rosa.png" class="sticker s10-bow anim-pulse" alt="Moño rosa">
+        <img src="yurex rosa.png" class="sticker s10-tape" alt="Cinta rosa">
+        <img src="corazon rosa.png" class="sticker s10-heart-top anim-pulse" alt="Corazón rosa">
+        <img src="clip.png" class="sticker" style="bottom:-15px; left:50%; transform:translateX(-50%); width:45px;" alt="Clip">
+
+        <div class="notebook-sheet-card">
+          <img src="hoja cuaderno.png" class="notebook-paper-bg" alt="Hoja de cuaderno">
+          <div class="notebook-content">
+            <!-- Crown Doodle over Title -->
+            <img src="corona rayon.png" style="width:75px; margin-bottom:-10px; z-index:10;" alt="Corona dibujada">
+
+            <div class="cutout-title-row" style="margin-bottom:18px;">
+              <div class="cutout-word">
+                <span class="cutout-tile tile-pink-hot">¡</span>
+                <span class="cutout-tile tile-magenta">T</span>
+                <span class="cutout-tile tile-pink-deep">E</span>
+              </div>
+              <div class="cutout-word">
+                <span class="cutout-tile tile-pink-soft">a</span>
+                <span class="cutout-tile tile-white-outline">M</span>
+                <span class="cutout-tile tile-magenta">O</span>
+                <span class="cutout-tile tile-pink-hot">!</span>
+              </div>
+            </div>
+
+            <p class="notebook-body-text" style="font-size: clamp(16px, 2.1vw, 22px);">
+              Cada día a tu lado ha sido una bendición, un viaje lleno de risas, aprendizajes y momentos inolvidables.
+              <br><br>
+              ¡Gracias por ser mi
+              <span class="doodle-circle-wrap circle-pink">
+                <span class="doodle-text">compañero de vida!</span>
+                <svg class="doodle-circle-svg" viewBox="0 0 240 46" preserveAspectRatio="none">
+                  <path class="doodle-circle-path" d="M 10,23 C 10,9 30,5 120,5 C 210,5 230,11 230,23 C 230,35 210,41 120,41 C 30,41 10,35 10,23 Z"/>
+                </svg>
+              </span>
+            </p>
+
+            <button class="celebrate-love-btn" id="celebrate-love-btn">
+              ❤️ Celebrar Nuestro Amor ✨
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
